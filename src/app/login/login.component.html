@@ -1,0 +1,25 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+  <div class="form-group">
+    <label for="afm">Α.Φ.Μ.</label>
+    <input type="text" class="form-control" formControlName="afm" id="afm"/>
+  </div>
+  <div *ngIf="loginForm.controls['afm'].invalid && (loginForm.controls['afm'].dirty || loginForm.controls['afm'].touched)" class="alert alert-danger">
+    <div *ngIf="loginForm.controls['afm'].errors.required">
+      Το Α.Φ.Μ. είναι υποχρεωτικό.
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" formControlName="password" id="password" />
+  </div>
+  <div *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)" class="alert alert-danger">
+    <div *ngIf="loginForm.controls['password'].errors.required">
+      Ο κωδικός είναι υποχρεωτικός
+    </div>
+  </div>
+  <div class="form-group">
+    <button [disabled]="loginForm.pristine || loginForm.invalid" class="btn btn-primary">Σύνδεση</button>
+  </div>
+</form>
+
+
