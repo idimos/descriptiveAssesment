@@ -1,0 +1,1 @@
+SELECT lessons.NAME FROM lessons,assigned_lessons WHERE lessons.id = assigned_lessons.lessonid AND assigned_lessons.teacherafm = '079044910'

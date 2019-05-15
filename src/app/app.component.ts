@@ -21,14 +21,13 @@ export class AppComponent {
 
   constructor(
     private _loadingBar: SlimLoadingBarService, 
-    private _router: Router,
+    private router: Router,
     private authenticationService: AuthenticationService
     ) {
-        this._router.events.subscribe((event: Event) => {
+        this.router.events.subscribe((event: Event) => {
           this.navigationInterceptor(event);
         });
         this.authenticationService.currentTeacher.subscribe(x => this.currentTeacher = x);
-        console.log(this.currentTeacher.surname);
   }
 
   private navigationInterceptor(event: Event): void {
@@ -48,6 +47,7 @@ export class AppComponent {
 
   logout() {
     this.authenticationService.logout();
-    this._router.navigate(['/login']);
+    this.router.navigate(['/login']);
+  }
 }
-}
+

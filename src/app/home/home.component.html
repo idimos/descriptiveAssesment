@@ -1,2 +1,9 @@
-  <h1>Hi {{teacher.name}}!</h1>
+  <!-- <h3>{{loggedInTeacher.name}} {{loggedInTeacher.surname}}</h3> -->
+  <div class="col-sm-6">
+    <div class="callout callout-success b-t-2 b-r-2 b-b-2" *ngIf="loggedInTeacher">
+      <strong class="h5">{{loggedInTeacher.surname}} {{loggedInTeacher.name}}</strong><br>
+      <small class="text-muted">{{loggedInTeacher.afm}}</small>
+    </div>
+</div>
+  <subclassess [teacherAFM]="loggedInTeacher.afm"></subclassess>
 

@@ -1,0 +1,11 @@
+<table class="table ">
+    <tbody>
+      <tr *ngFor="let s of subclasses">
+        <td><button (click)="selectSubClass(s)" type="button" class="btn btn-primary btn-lg btn-block">ΤΜΗΜΑ {{s.name}}</button></td>
+      </tr>
+    </tbody>
+  </table>
+<!-- <lessons *ngIf="selectedSubClass.id != null" [subclassId]="selectedSubClass.id"></lessons> -->
+<ul *ngIf="lessons !== undefined || lessons.length != 0">
+  <li *ngFor="let lesson of lessons">{{lesson.name}}</li>
+</ul>

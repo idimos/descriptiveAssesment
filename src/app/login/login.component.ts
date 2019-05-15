@@ -14,15 +14,8 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   teacher : Teacher;
   returnUrl: string;
-  constructor(
-    private fb:FormBuilder, 
-    private ts: AuthenticationService,
-    private route: ActivatedRoute,
-    private router: Router,) { 
-    this.createForm();
-  }
 
-  createForm() {
+  constructor(private fb:FormBuilder,private ts: AuthenticationService,private route: ActivatedRoute,private router: Router,) { 
     this.loginForm = this.fb.group({
       afm: ['', Validators.required],
       password: ['', Validators.required]
@@ -30,12 +23,11 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    this.ts.login(this.loginForm.controls.afm.value,this.loginForm.controls.password.value).subscribe((teacher:Teacher)=>{
-      this.teacher = teacher;
-      console.log(this.teacher);
-      localStorage.setItem('token',this.teacher.afm);
-      this.router.navigate([this.returnUrl]);
-    })
+    this.ts.login(this.loginForm.controls.afm.value,this.loginForm.controls.password.value)
+      .subscribe((teacher:Teacher)=>{
+        this.teacher = teacher;
+        this.router.navigate([this.returnUrl]);
+      })
   }
 
   ngOnInit() {

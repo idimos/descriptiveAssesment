@@ -7,16 +7,22 @@ import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { TopHeaderComponent } from './_header/_header.component';
+// import { TopHeaderComponent } from './_header/_header.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
+import { SchoolComponent } from './_helpers/school/school.component';
+import { SubclassessComponent } from './subclassess/subclassess.component';
+// import { LessonsComponent } from './lessons/lessons.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TopHeaderComponent,
+    // TopHeaderComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    SchoolComponent,
+    SubclassessComponent
+    // LessonsComponent
   ],
   imports: [
     BrowserModule,

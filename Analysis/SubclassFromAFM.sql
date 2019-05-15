@@ -1,0 +1,1 @@
+SELECT subclasses.* FROM subclasses, assigned_lessons WHERE subclasses.id = assigned_lessons.subclassid AND assigned_lessons.teacherafm = '079044910'
